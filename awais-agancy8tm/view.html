@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Product View | Awais Agency8™</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .view { max-width: 1200px; margin: 20px auto; padding: 0 16px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+      .view-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .media { width: 100%; }
+      .media .slider { width: 100%; max-width: 100%; aspect-ratio: 16/10; background: #f5f5f6; border: 1px solid #e5e6e8; border-radius: 12px; overflow: hidden; position: relative; }
+      .slides { position: relative; width: 100%; height: 100%; }
+      .slide { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 400ms ease; display: grid; place-items: center; background: #fff; }
+      .slide.is-active { opacity: 1; }
+      .slide img, .slide video { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .thumbs { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; }
+      .thumbs img, .thumbs video { width: 100px; height: 70px; object-fit: cover; border: 1px solid #e5e6e8; border-radius: 8px; cursor: pointer; }
+      .content { display: grid; gap: 12px; }
+      .price { font-size: 20px; font-weight: 700; }
+      .cta-row { display: flex; gap: 10px; align-items: center; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px; border-radius: 10px; border: 1px solid #e5e6e8; background: transparent; color: #0f0f10; text-decoration: none; cursor: pointer; transition: transform 180ms ease, box-shadow 180ms ease, color 150ms ease, border-color 150ms ease; }
+      .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: #0a66c2; border-color: #0a66c2; }
+      @media (max-width: 800px) {
+        .view-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="view">
+      <a href="index.html" class="btn">← Back to Home</a>
+      <div class="view-grid">
+        <div class="media">
+          <div class="slider" id="viewSlider">
+
+
+
+            <!--------------Update the images and videos here-------------------------------------->
+            <div class="slides">
+              <div class="slide is-active"><img src="https://images.unsplash.com/photo-1585386959984-a4155223165f?q=80&w=1200&auto=format&fit=crop" alt="Product image 1"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=80&w=1200&auto=format&fit=crop" alt="Product image 2"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200&auto=format&fit=crop" alt="Product image 3"></div>
+              <div class="slide"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="Product image 4"></div>
+              <div class="slide"><video src="https://videos.pexels.com/video-files/6963046/6963046-uhd_2732_1440_24fps.mp4" autoplay muted loop playsinline></video></div>
+            </div>
+          </div>
+          <div class="thumbs" id="viewThumbs">
+            <img data-index="0" src="https://images.unsplash.com/photo-1585386959984-a4155223165f?q=60&w=300&auto=format&fit=crop" alt="thumb 1">
+            <img data-index="1" src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?q=60&w=300&auto=format&fit=crop" alt="thumb 2">
+            <img data-index="2" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=60&w=300&auto=format&fit=crop" alt="thumb 3">
+            <img data-index="3" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=60&w=300&auto=format&fit=crop" alt="thumb 4">
+            <video data-index="4" src="https://videos.pexels.com/video-files/6963046/6963046-uhd_2732_1440_24fps.mp4"></video>
+          </div>
+        </div>
+        <div class="content">
+          <h1 id="pTitle">Product Title</h1>
+          <div class="price" id="pPrice">$29.99</div>
+          <p id="pDesc">High-quality product ideal for dropshipping and wholesale. Durable design with great value for money. Shipped globally with fast fulfillment options.</p>
+          <div class="cta-row">
+            <a id="waBtn" class="btn btn-primary" href="https://wa.me/923077169743?text=I%20want%20to%20add%20this%20product%20to%20cart" target="_blank" rel="noopener">Add to Cart via WhatsApp</a>
+            <a class="btn" href="index.html">Continue Shopping</a>
+          </div>
+
+          <!-------------------------------------updation endend here -->
+        </div>
+      </div>
+    </div>
+    <script>
+      (function(){
+        var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+        var thumbs = Array.prototype.slice.call(document.querySelectorAll('#viewThumbs [data-index]'));
+        var active = 0;
+        function go(i){
+          slides.forEach(function(s, k){ s.classList.toggle('is-active', k === i); });
+          active = i;
+        }
+        thumbs.forEach(function(t){ t.addEventListener('click', function(){ go(parseInt(t.getAttribute('data-index'), 10)); }); });
+
+        // Optionally populate content from query params (?title=&price=)
+        var params = new URLSearchParams(location.search);
+        var title = params.get('title');
+        var price = params.get('price');
+        if (title) document.getElementById('pTitle').textContent = title;
+        if (price) document.getElementById('pPrice').textContent = price;
+        var wa = document.getElementById('waBtn');
+        if (title) wa.href = 'https://wa.me/923077169743?text=' + encodeURIComponent('Add to cart: ' + title + ' (' + (price||'') + ')');
+      })();
+    </script>
+  </body>
+</html>
+
+
