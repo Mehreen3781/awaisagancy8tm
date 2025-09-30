@@ -1,5 +1,5 @@
 [
-  { "id": 1, "title": "Wireless Earbuds Pro X", "price": 39.99, "rating": 4.6, "reviews": 842, "img": "productsimages/acni2.png", "badge": "ACNI Cleanser" },
+  { "id": 1, "title": "Wireless Earbuds Pro X", "price": 39.99, "rating": 4.6, "reviews": 842, "img": "productsimages/acni2.png", "badge": "Top Seller" },
   { "id": 2, "title": "Smartwatch Series X2", "price": 59.99, "rating": 4.4, "reviews": 510, "img": "https://images.unsplash.com/photo-1511735111819-9a3f7709049c?q=80&w=1200&auto=format&fit=crop", "badge": "Limited" },
   { "id": 3, "title": "4K Action Camera Ultra", "price": 79.99, "rating": 4.5, "reviews": 392, "img": "https://images.unsplash.com/photo-1502920917128-1aa500764b8a?q=80&w=1200&auto=format&fit=crop" },
   { "id": 4, "title": "Ergonomic Office Chair", "price": 129.99, "rating": 4.7, "reviews": 1120, "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop", "badge": "New" },
