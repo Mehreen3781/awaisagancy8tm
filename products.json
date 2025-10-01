@@ -1,106 +1,103 @@
 
 
 
-
-
 [
   {
     "id": 1,
     "title": "Acni Patch",
-    "price": 52.99,
+    "price": 50.99,
     "rating": 4.6,
-    "reviews": 842,
     "images": [
       "productsimages/acni2.png",
       "productsimages/acni3.png",
-      "productsimages/acni4.png.png"
-    ],
-    "badge": "Top Seller"
+      "productsimages/acni4.png",
+      "productsimages/acni5.png",
+      "productsimages/acni6.png",
+      "productsimages/acnispanch.png"
+    ]
   },
   {
     "id": 2,
-    "title": "Smartwatch Series X2",
-    "price": 59.99,
-    "rating": 4.4,
-    "reviews": 510,
+    "title": "Watch Charger Cable (2 Pack)",
+    "price": 7.0,
+    "rating": 4.5,
     "images": [
-      "productsimages/smartwatch1.png",
-      "productsimages/smartwatch2.png",
-      "productsimages/smartwatch3.png"
-    ],
-    "badge": "Limited"
+      "productsimages/charger.png",
+      "productsimages/charger2.png",
+      "productsimages/charger3.png",
+      "productsimages/charger4.png",
+      "productsimages/charger5.png",
+      "productsimages/chargervedio.mp4"
+    ]
   },
   {
     "id": 3,
-    "title": "4K Action Camera Ultra",
-    "price": 79.99,
-    "rating": 4.5,
-    "reviews": 392,
+    "title": "Bit Tool Kit",
+    "price": 14.5,
+    "rating": 4.4,
     "images": [
-      "productsimages/camera1.png",
-      "productsimages/camera2.png",
-      "productsimages/camera3.png"
+      "productsimages/bittool.png",
+      "productsimages/bittool2.png"
     ]
   },
   {
     "id": 4,
-    "title": "Ergonomic Office Chair",
-    "price": 129.99,
-    "rating": 4.7,
-    "reviews": 1120,
+    "title": "Multi-Surface Cleaner",
+    "price": 9.99,
+    "rating": 4.3,
     "images": [
-      "productsimages/chair1.png",
-      "productsimages/chair2.png",
-      "productsimages/chair3.png"
-    ],
-    "badge": "New"
+      "productsimages/cleaner.png",
+      "productsimages/cleaner2.png",
+      "productsimages/cleaner3.png",
+      "productsimages/cleaner4.png",
+      "productsimages/cleaner5.png",
+      "productsimages/cleaner6.png"
+    ]
   },
   {
     "id": 5,
-    "title": "Portable Blender Max",
-    "price": 24.99,
+    "title": "Chocolate Bar Set",
+    "price": 4.99,
     "rating": 4.2,
-    "reviews": 216,
     "images": [
-      "productsimages/blender1.png",
-      "productsimages/blender2.png",
-      "productsimages/blender3.png"
+      "productsimages/coclatebar.png",
+      "productsimages/choclate2.png",
+      "productsimages/choclatt3.png"
     ]
   },
   {
     "id": 6,
-    "title": "Cordless Drill Kit 20V",
-    "price": 89.99,
-    "rating": 4.6,
-    "reviews": 337,
+    "title": "Child Protector",
+    "price": 5.49,
+    "rating": 4.1,
     "images": [
-      "productsimages/drill1.png",
-      "productsimages/drill2.png",
-      "productsimages/drill3.png"
+      "productsimages/childprodector.png"
     ]
   },
   {
     "id": 7,
-    "title": "Minimalist Quartz Watch",
-    "price": 44.99,
-    "rating": 4.3,
-    "reviews": 780,
+    "title": "Powerful Quad Processor",
+    "price": 119.0,
+    "rating": 4.5,
     "images": [
-      "productsimages/watch1.png",
-      "productsimages/watch2.png",
-      "productsimages/watch3.png"
+      "productsimages/powerfulqourprocessor.png"
     ]
   },
   {
     "id": 8,
-    "title": "Bluetooth Speaker Mini",
-    "price": 29.99,
-    "rating": 4.1,
-    "reviews": 145,
+    "title": "Star Projector Toy",
+    "price": 24.99,
+    "rating": 4.6,
     "images": [
-      "productsimages/speaker1.png",
-      "productsimages/speaker2.png",
-      "productsimages/speaker3.png"
+      "imges/toystarprojector.png",
+      "imges/toy2.png",
+      "imges/toy3.png",
+      "imges/toy5.png",
+      "imges/toy6.png",
+      "imges/toy7.png"
     ]
   }
 ]
+
+
+
