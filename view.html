@@ -2,9 +2,6 @@
 
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,8 +23,8 @@
       .slide { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 400ms ease; display: grid; place-items: center; background: #fff; }
       .slide.is-active { opacity: 1; }
       .slide img, .slide video { width: 100%; height: 100%; object-fit: cover; display: block; }
-      .thumbs { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; }
-      .thumbs img, .thumbs video { width: 100px; height: 70px; object-fit: cover; border: 1px solid #e5e6e8; border-radius: 8px; cursor: pointer; }
+      .thumbs { display: flex; gap: 10px; margin-top: 10px; overflow-x: auto; padding-bottom: 6px; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; }
+      .thumbs img, .thumbs video { width: 110px; height: 74px; object-fit: cover; border: 1px solid #e5e6e8; border-radius: 10px; cursor: pointer; flex: 0 0 auto; scroll-snap-align: start; }
       .content { display: grid; gap: 12px; }
       .price { font-size: 20px; font-weight: 700; }
       .cta-row { display: flex; gap: 10px; align-items: center; }
@@ -35,6 +32,14 @@
       .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: #0a66c2; border-color: #0a66c2; }
       @media (max-width: 800px) {
         .view-grid { grid-template-columns: 1fr; }
+        .media .slider { aspect-ratio: 4/3; }
+      }
+      @media (max-width: 560px) {
+        .view { padding: 0 12px; }
+        .media .slider { aspect-ratio: 1/1; border-radius: 12px; }
+        .thumbs img, .thumbs video { width: 88px; height: 62px; border-radius: 8px; }
+        .cta-row { flex-direction: column; align-items: stretch; }
+        .cta-row .btn { width: 100%; }
       }
     </style>
   </head>
@@ -44,109 +49,79 @@
       <div class="view-grid">
         <div class="media">
           <div class="slider" id="viewSlider">
-
-
-
-            <!--------------Update the images and videos here-------------------------------------->
-            <div class="slides">
-              <div class="slide is-active"><img src="productsimages/acni2.png" alt="Product image 1"></div>
-              <div class="slide"><img src="productsimages/acni3.png" alt="Product image 2"></div>
-              <div class="slide"><img src="productsimages/acni4.png" alt="Product image 3"></div>
-              <div class="slide"><img src="productsimages/acni6.png" alt="Product image 4"></div>
-              <div class="slide"><video src="productsimages/acni5.png" autoplay muted loop playsinline></video></div>
-            </div>
+            <div class="slides" id="slides"></div>
           </div>
-           <div class="thumbs" id="viewThumbs">
-            <img data-index="0" src="productsimages/acnispanch.png" alt="thumb 1">
-            <img data-index="1" src="productsimages/charger.png" alt="thumb 2">
-            <img data-index="2" src="imges/android14-4.png" alt="thumb 3">
-            <img data-index="3" src="imges/toystarprojector.png" alt="thumb 4">
-            <video data-index="4" src="https://videos.pexels.com/video-files/6963046/6963046-uhd_732_1440_24fps.mp4"></video>
-          </div> 
+          <div class="thumbs" id="viewThumbs"></div>
         </div>
         <div class="content">
-          <h1 id="pTitle">Product Title</h1>
-          <div class="price" id="pPrice">$29.99</div>
-          <p id="pDesc">High-quality product ideal for dropshipping and wholesale. Durable design with great value for money. Shipped globally with fast fulfillment options.</p>
+          <h1 id="pTitle"></h1>
+          <div class="price" id="pPrice"></div>
+          <p id="pDesc"></p>
           <div class="cta-row">
             <a id="waBtn" class="btn btn-primary" href="https://wa.me/923077169743?text=I%20want%20to%20add%20this%20product%20to%20cart" target="_blank" rel="noopener">Add to Cart via WhatsApp</a>
             <a class="btn" href="index.html">Continue Shopping</a>
           </div>
-
-          <!-------------------------------------updation endend here -->
         </div>
       </div>
     </div>
-    
-<script>
-(async function(){
-  // URL se product id nikalna
-  const params = new URLSearchParams(location.search);
-  const id = parseInt(params.get("id"));
+    <script>
+      (function(){
+        function fetchJSON(url){ return fetch(url).then(function(r){ return r.json(); }); }
+        var params = new URLSearchParams(location.search);
+        var id = parseInt(params.get('id')||'', 10);
+        var slidesEl = document.getElementById('slides');
+        var thumbsEl = document.getElementById('viewThumbs');
+        var slides = [];
+        function go(i){
+          slides.forEach(function(s, k){ s.classList.toggle('is-active', k === i); });
+        }
+        function renderMedia(images){
+          slidesEl.innerHTML = (images||[]).map(function(src, i){
+            var isVideo = /\.(mp4|webm|ogg)$/i.test(src);
+            return '<div class="slide'+(i===0?' is-active':'')+'">' + (isVideo ? '<video src="'+src+'" autoplay muted loop playsinline></video>' : '<img src="'+src+'" alt="Product image '+(i+1)+'" />') + '</div>';
+          }).join('');
+          thumbsEl.innerHTML = (images||[]).map(function(src, i){
+            var isVideo = /\.(mp4|webm|ogg)$/i.test(src);
+            var tag = isVideo ? 'video' : 'img';
+            return '<'+tag+' data-index="'+i+'" src="'+src+'"></'+tag+'>';
+          }).join('');
+          slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+          Array.prototype.slice.call(thumbsEl.querySelectorAll('[data-index]')).forEach(function(t){
+            t.addEventListener('click', function(){ go(parseInt(t.getAttribute('data-index'), 10)); });
+          });
+        }
+        var fallbackItems = [
+          { id: 1, title: 'Acni Patch', price: 50.99, rating: 4.6, images: ['productsimages/acni2.png','productsimages/acni3.png','productsimages/acni4.png'] },
+          { id: 2, title: 'Watch Charger Cable (2 Pack)', price: 7.00, rating: 4.5, images: ['productsimages/charger.png','productsimages/charger2.png','productsimages/chargervedio.mp4'] },
+          { id: 3, title: 'Bit Tool Kit', price: 14.50, rating: 4.4, images: ['productsimages/bittool.png','productsimages/bittool2.png'] },
+          { id: 4, title: 'Multi-Surface Cleaner', price: 9.99, rating: 4.3, images: ['productsimages/cleaner.png','productsimages/cleaner2.png','productsimages/cleaner3.png'] },
+          { id: 5, title: 'Chocolate Bar Set', price: 4.99, rating: 4.2, images: ['productsimages/coclatebar.png','productsimages/choclate2.png','productsimages/choclatt3.png'] },
+          { id: 6, title: 'Child Protector', price: 5.49, rating: 4.1, images: ['productsimages/childprodector.png'] },
+          { id: 7, title: 'Powerful Quad Processor', price: 119.00, rating: 4.5, images: ['productsimages/powerfulqourprocessor.png'] },
+          { id: 8, title: 'Star Projector Toy', price: 24.99, rating: 4.6, images: ['imges/toystarprojector.png','imges/toy2.png','imges/toy3.png'] }
+        ];
 
-  // JSON file se data load karna
-  const res = await fetch("products.json");
-  const products = await res.json();
+        function renderFrom(items){
+          var list = items || [];
+          var product = list.find(function(p){ return p.id === id; }) || list[0];
+          if (!product) return;
+          document.getElementById('pTitle').textContent = product.title || '';
+          document.getElementById('pPrice').textContent = product.price != null ? ('$' + product.price.toFixed(2)) : '';
+          var desc = product.description || ('High-quality ' + (product.title||'product') + (product.rating ? ' • Rated ' + product.rating.toFixed(1) + '/5' : '') + '. Fast global shipping and wholesale-friendly.');
+          document.getElementById('pDesc').textContent = desc;
+          renderMedia(product.images || (product.img ? [product.img] : []));
+          var wa = document.getElementById('waBtn');
+          wa.href = 'https://wa.me/923077169743?text=' + encodeURIComponent('Add to cart: ' + (product.title||'') + ' ($' + (product.price||'') + ')');
+        }
 
-  // id ke basis pe product find karna
-  const product = products.find(p => p.id === id);
-
-  if(product){
-    // Title & Price update
-    document.getElementById("pTitle").textContent = product.title;
-    document.getElementById("pPrice").textContent = "$" + product.price;
-
-    // WhatsApp link update
-    const wa = document.getElementById("waBtn");
-    wa.href = "https://wa.me/923077169743?text=" + 
-              encodeURIComponent(`Add to cart: ${product.title} ($${product.price})`);
-
-    // Slider images update
-    const slidesContainer = document.querySelector(".slides");
-    const thumbsContainer = document.getElementById("viewThumbs");
-
-    slidesContainer.innerHTML = "";
-    thumbsContainer.innerHTML = "";
-
-    product.images.forEach((img, i) => {
-      // slides
-      const slide = document.createElement("div");
-      slide.className = "slide" + (i === 0 ? " is-active" : "");
-      slide.innerHTML = `<img src="${img}" alt="Product image ${i+1}">`;
-      slidesContainer.appendChild(slide);
-
-      // thumbs
-      const thumb = document.createElement("img");
-      thumb.dataset.index = i;
-      thumb.src = img;
-      thumb.alt = `thumb ${i+1}`;
-      thumbsContainer.appendChild(thumb);
-    });
-
-    // slider functionality
-    let active = 0;
-    const slides = slidesContainer.querySelectorAll(".slide");
-    const thumbs = thumbsContainer.querySelectorAll("img");
-
-    function go(i){
-      slides.forEach((s,k)=> s.classList.toggle("is-active", k===i));
-      active = i;
-    }
-
-    thumbs.forEach(t => {
-      t.addEventListener("click", () => go(parseInt(t.dataset.index, 10)));
-    });
-  } else {
-    document.querySelector(".content").innerHTML = "<p>Product not found.</p>";
-  }
-})();
-</script>
-
-
-
+        if (location.protocol === 'file:') {
+          renderFrom(fallbackItems);
+        } else {
+          fetchJSON('products.json').then(function(items){ renderFrom(items && items.length ? items : fallbackItems); }).catch(function(){ renderFrom(fallbackItems); });
+        }
+      })();
+    </script>
   </body>
 </html>
-
-
 
 
