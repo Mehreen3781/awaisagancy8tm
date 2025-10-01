@@ -1,17 +1,106 @@
+
+
+
+
+
 [
-  { "id": 1, "title": "Wireless Earbuds Pro X", "price": 39.99, "rating": 4.6, "reviews": 842, "img": "productsimages/acni2.png", "badge": "Top Seller" },
-  { "id": 2, "title": "Smartwatch Series X2", "price": 59.99, "rating": 4.4, "reviews": 510, "img": "productsimages/acni2.png", "badge": "Limited" },
-  { "id": 3, "title": "4K Action Camera Ultra", "price": 79.99, "rating": 4.5, "reviews": 392, "img": "https://images.unsplash.com/photo-1502920917128-1aa500764b8a?q=80&w=1200&auto=format&fit=crop" },
-  { "id": 4, "title": "Ergonomic Office Chair", "price": 129.99, "rating": 4.7, "reviews": 1120, "img": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop", "badge": "New" },
-  { "id": 5, "title": "Portable Blender Max", "price": 24.99, "rating": 4.2, "reviews": 216, "img": "https://images.unsplash.com/photo-1586201375761-83865001e31b?q=80&w=1200&auto=format&fit=crop" },
-  { "id": 6, "title": "Cordless Drill Kit 20V", "price": 89.99, "rating": 4.6, "reviews": 337, "img": "https://images.unsplash.com/photo-1604329698699-ed3d6f3155f7?q=80&w=1200&auto=format&fit=crop" },
-  { "id": 7, "title": "Minimalist Quartz Watch", "price": 44.99, "rating": 4.3, "reviews": 780, "img": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1200&auto=format&fit=crop" },
-  { "id": 8, "title": "Bluetooth Speaker Mini", "price": 29.99, "rating": 4.1, "reviews": 145, "img": "https://images.unsplash.com/photo-1516397281156-ca07cf9746fc?q=80&w=1200&auto=format&fit=crop" },
-  { "id": 9, "title": "Gaming Mouse RGB Pro", "price": 25.99, "rating": 4.4, "reviews": 1042, "img": "https://images.unsplash.com/photo-1592841200221-c3f8b1c9ca72?q=80&w=1200&auto=format&fit=crop", "badge": "Deal" },
-  { "id": 10, "title": "LED Desk Lamp Flex", "price": 19.99, "rating": 4.0, "reviews": 204, "img": "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200&auto=format&fit=crop" },
-  { "id": 11, "title": "Eco Water Bottle 1L", "price": 14.99, "rating": 4.3, "reviews": 503, "img": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=1200&auto=format&fit=crop" },
-  { "id": 12, "title": "USB-C Hub 7-in-1", "price": 34.99, "rating": 4.5, "reviews": 624, "img": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1200&auto=format&fit=crop" }
+  {
+    "id": 1,
+    "title": "Wireless Earbuds Pro X",
+    "price": 39.99,
+    "rating": 4.6,
+    "reviews": 842,
+    "images": [
+      "productsimages/earbuds1.png",
+      "productsimages/earbuds2.png",
+      "productsimages/earbuds3.png"
+    ],
+    "badge": "Top Seller"
+  },
+  {
+    "id": 2,
+    "title": "Smartwatch Series X2",
+    "price": 59.99,
+    "rating": 4.4,
+    "reviews": 510,
+    "images": [
+      "productsimages/smartwatch1.png",
+      "productsimages/smartwatch2.png",
+      "productsimages/smartwatch3.png"
+    ],
+    "badge": "Limited"
+  },
+  {
+    "id": 3,
+    "title": "4K Action Camera Ultra",
+    "price": 79.99,
+    "rating": 4.5,
+    "reviews": 392,
+    "images": [
+      "productsimages/camera1.png",
+      "productsimages/camera2.png",
+      "productsimages/camera3.png"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Ergonomic Office Chair",
+    "price": 129.99,
+    "rating": 4.7,
+    "reviews": 1120,
+    "images": [
+      "productsimages/chair1.png",
+      "productsimages/chair2.png",
+      "productsimages/chair3.png"
+    ],
+    "badge": "New"
+  },
+  {
+    "id": 5,
+    "title": "Portable Blender Max",
+    "price": 24.99,
+    "rating": 4.2,
+    "reviews": 216,
+    "images": [
+      "productsimages/blender1.png",
+      "productsimages/blender2.png",
+      "productsimages/blender3.png"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Cordless Drill Kit 20V",
+    "price": 89.99,
+    "rating": 4.6,
+    "reviews": 337,
+    "images": [
+      "productsimages/drill1.png",
+      "productsimages/drill2.png",
+      "productsimages/drill3.png"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Minimalist Quartz Watch",
+    "price": 44.99,
+    "rating": 4.3,
+    "reviews": 780,
+    "images": [
+      "productsimages/watch1.png",
+      "productsimages/watch2.png",
+      "productsimages/watch3.png"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Bluetooth Speaker Mini",
+    "price": 29.99,
+    "rating": 4.1,
+    "reviews": 145,
+    "images": [
+      "productsimages/speaker1.png",
+      "productsimages/speaker2.png",
+      "productsimages/speaker3.png"
+    ]
+  }
 ]
-
-
-
