@@ -72,27 +72,73 @@
         </div>
       </div>
     </div>
-    <script>
-      (function(){
-        var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
-        var thumbs = Array.prototype.slice.call(document.querySelectorAll('#viewThumbs [data-index]'));
-        var active = 0;
-        function go(i){
-          slides.forEach(function(s, k){ s.classList.toggle('is-active', k === i); });
-          active = i;
-        }
-        thumbs.forEach(function(t){ t.addEventListener('click', function(){ go(parseInt(t.getAttribute('data-index'), 10)); }); });
+    
+<script>
+(async function(){
+  // URL se product id nikalna
+  const params = new URLSearchParams(location.search);
+  const id = parseInt(params.get("id"));
 
-        // Optionally populate content from query params (?title=&price=)
-        var params = new URLSearchParams(location.search);
-        var title = params.get('title');
-        var price = params.get('price');
-        if (title) document.getElementById('pTitle').textContent = title;
-        if (price) document.getElementById('pPrice').textContent = price;
-        var wa = document.getElementById('waBtn');
-        if (title) wa.href = 'https://wa.me/923077169743?text=' + encodeURIComponent('Add to cart: ' + title + ' (' + (price||'') + ')');
-      })();
-    </script>
+  // JSON file se data load karna
+  const res = await fetch("products.json");
+  const products = await res.json();
+
+  // id ke basis pe product find karna
+  const product = products.find(p => p.id === id);
+
+  if(product){
+    // Title & Price update
+    document.getElementById("pTitle").textContent = product.title;
+    document.getElementById("pPrice").textContent = "$" + product.price;
+
+    // WhatsApp link update
+    const wa = document.getElementById("waBtn");
+    wa.href = "https://wa.me/923077169743?text=" + 
+              encodeURIComponent(`Add to cart: ${product.title} ($${product.price})`);
+
+    // Slider images update
+    const slidesContainer = document.querySelector(".slides");
+    const thumbsContainer = document.getElementById("viewThumbs");
+
+    slidesContainer.innerHTML = "";
+    thumbsContainer.innerHTML = "";
+
+    product.images.forEach((img, i) => {
+      // slides
+      const slide = document.createElement("div");
+      slide.className = "slide" + (i === 0 ? " is-active" : "");
+      slide.innerHTML = `<img src="${img}" alt="Product image ${i+1}">`;
+      slidesContainer.appendChild(slide);
+
+      // thumbs
+      const thumb = document.createElement("img");
+      thumb.dataset.index = i;
+      thumb.src = img;
+      thumb.alt = `thumb ${i+1}`;
+      thumbsContainer.appendChild(thumb);
+    });
+
+    // slider functionality
+    let active = 0;
+    const slides = slidesContainer.querySelectorAll(".slide");
+    const thumbs = thumbsContainer.querySelectorAll("img");
+
+    function go(i){
+      slides.forEach((s,k)=> s.classList.toggle("is-active", k===i));
+      active = i;
+    }
+
+    thumbs.forEach(t => {
+      t.addEventListener("click", () => go(parseInt(t.dataset.index, 10)));
+    });
+  } else {
+    document.querySelector(".content").innerHTML = "<p>Product not found.</p>";
+  }
+})();
+</script>
+
+
+
   </body>
 </html>
 
