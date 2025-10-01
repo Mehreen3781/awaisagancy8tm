@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +14,153 @@
     .lead { color: var(--muted); }
     .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+
+    /* About hero */
+    .hero-about { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: radial-gradient(1000px 300px at -10% -10%, rgba(10,102,194,0.15), transparent), linear-gradient(180deg, #fff, #f7f7f8); box-shadow: var(--shadow); margin: 20px 0 28px; }
+    .hero-about-inner { padding: 32px 18px; display: grid; grid-template-columns: 1fr 320px; gap: 20px; align-items: center; }
+    .hero-about h2 { margin: 0 0 8px; letter-spacing: -0.3px; }
+    .hero-about p { margin: 0; color: var(--muted); }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--line); background: #fff; font-weight: 600; margin-bottom: 10px; animation: fadeIn 700ms ease both; }
+    .hero-visual { width: 100%; height: 200px; border: 1px solid var(--line); border-radius: 14px; background: url('slider/world-sale-internet-sales-concept-supermarket-cart-with-earth-globe-blue-background-world-trade-delivery-purchases_90380-743.jpg') center/cover no-repeat; box-shadow: var(--shadow); animation: floatY 3s ease-in-out infinite; }
+
+    /* Profile card */
+    .profile-card { display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); box-shadow: var(--shadow); animation: fadeUp 700ms ease both; }
+    .avatar { width: 120px; height: 120px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); display: grid; place-items: center; }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .profile h3 { margin: 0 0 6px; }
+    .profile p { margin: 0 0 10px; color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { border: 1px solid var(--line); background: #fff; padding: 6px 10px; border-radius: 999px; font-size: 13px; }
+    .actions { display: flex; gap: 10px; margin-top: 10px; }
+
+    /* Gallery */
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
+    .gallery .tile { position: relative; padding-top: 68%; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--bg); box-shadow: var(--shadow); }
+    .gallery .tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.05); transition: transform 300ms ease; }
+    .gallery .tile:hover img { transform: scale(1.04); }
+
+    @media (max-width: 900px) { .hero-about-inner { grid-template-columns: 1fr; } .gallery { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .gallery { grid-template-columns: 1fr; } .profile-card { grid-template-columns: 1fr; text-align: center; } .avatar { margin: 0 auto; } }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a class="btn" href="index.html">← Back to Home</a>
-    <h1>About Awais Agency8™</h1>
-    <p class="lead">Hi, I'm Muhammad Awais, a Mechanical Engineer turned expert at Awais agency8 ™🎁. With a passion for innovation and attention to detail, I specialize in Dropshipping and Wholesaling on eBay, Amazon, and Shopify. From Pakistan, I deliver top-notch global services, driving business growth and success. My expertise includes market trend analysis, supplier management, and store optimization for maximum ROI. At Awais agency8 ™🎁, we prioritize quality, reliability, and customer satisfaction. Let's unlock your e-commerce potential and dominate the market together! With a proven track record and commitment to excellence, I'm your trusted partner for e-commerce growth. Let's connect and achieve great things!</p>
+  <div class="announcement" role="status">Worldwide shipping • Wholesale pricing • Trusted by international sellers</div>
 
+  <header class="site-header">
+    <div class="brand" aria-label="Awais Agency8 brand">
+      <div class="logo" aria-hidden="true">
+        <img src="logo.png" alt="Awais Agency8 logo" style="height:50px;width:50px;border-radius:50%;object-fit:cover;display:block;" />
+      </div>
+      <a class="brand-title" href="index.html">Awais Agency8<sup>™</sup>🎁</a>
+    </div>
+    <nav class="quick-actions" aria-label="Account actions">
+      <a href="signin.html" class="action">Sign In</a>
+      <a href="orders.html" class="action">Orders</a>
+      <a href="cart.html" class="action cart" aria-label="Cart">
+        <span class="icon">🛒</span>
+        <span class="badge" aria-label="Items in cart">2</span>
+      </a>
+    </nav>
+  </header>
+
+  <nav class="subnav" aria-label="Primary navigation">
+    <a class="nav-pill" href="index.html">All</a>
+    <a class="nav-pill" href="electronics.html">Electronics</a>
+    <a class="nav-pill" href="index.html">Home</a>
+    <a class="nav-pill" href="beauty.html">Beauty</a>
+    <a class="nav-pill" href="toys.html">Toys</a>
+    <a class="nav-pill" href="fashion.html">Fashion</a>
+    <a class="nav-pill" href="automotive.html">Automotive</a>
+    <a class="nav-pill active" href="about.html">About</a>
+  </nav>
+  <section class="profile-card" aria-label="Owner profile">
+    <div class="avatar">
+      <img src="productsimages/awaislogo.png" alt="Muhammad Awais" onerror="this.onerror=null;this.src='logo.png';" />
+    </div>
+    <div class="profile">
+     
+      <span class="hero-badge">Awais agency8 ™ 🎁</span>
+      <div class="hero-about-inner">
+        <div>
+      
+          <h3>Muhammad Awais</h3>
+          <h2>Global wholesale and dropshipping, powered by precision</h2>
+          <p>Trusted partner for eBay, Amazon, and Shopify sellers worldwide.</p>
+          <p class="lead">Hi, I'm Muhammad Awais, a Mechanical Engineer turned expert at Awais agency8 ™🎁. With a passion for innovation and attention to detail, I specialize in Dropshipping and Wholesaling on eBay, 
+            Amazon, and Shopify. From Pakistan, I deliver top-notch global services, 
+            driving business growth and success. My expertise includes market trend analysis, 
+            supplier management, and store optimization for maximum ROI. At Awais agency8 ™🎁, we prioritize quality, reliability, and customer satisfaction. Let's unlock your e-commerce potential and dominate the market together! With a proven track record and commitment to excellence, I'm your trusted partner for e-commerce growth. Let's connect and achieve great things!</p>
+      
+        </div>
     
-  </div>
+      <!-- <p>Mechanical Engineer → Ecommerce Strategist. Dropshipping & Wholesale specialist.</p> -->
+      <div class="chips">
+        <span class="chip">Market trend analysis</span>
+        <span class="chip">Supplier management</span>
+        <span class="chip">Store optimization</span>
+        <span class="chip">Global fulfillment</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="#">Work with us</a>
+        <a class="btn" href="mailto:contact@example.com">Contact</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+  <div class="container">
+  
+    
+   
+    
+
+  <footer class="site-footer">
+      <div class="cols">
+          <div class="col">
+              <h4>Awais Agency8<sup>™</sup></h4>
+              <p>Your global wholesale and dropshipping partner.</p>
+          </div>
+          <div class="col">
+              <h5>Explore</h5>
+              <ul>
+                  <li><a href="#">About</a></li>
+                  <li><a href="#">Wholesale</a></li>
+                  <li><a href="#">Dropshipping</a></li>
+                  <li><a href="#">Logistics</a></li>
+              </ul>
+          </div>
+          <div class="col">
+              <h5>Support</h5>
+              <ul>
+                  <li><a href="#">Help Center</a></li>
+                  <li><a href="#">Shipping</a></li>
+                  <li><a href="#">Returns</a></li>
+                  <li><a href="#">Contact</a></li>
+              </ul>
+          </div>
+          <div class="col">
+              <h5>Follow</h5>
+              <div class="socials">
+                  <a href="https://www.tiktok.com/@awais.agency8?_t=ZS-8zzYo8y1PIQ&_r=1" aria-label="TikTok" target="_blank" rel="noopener">
+                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="" />
+                  </a>
+                  <a href="https://www.facebook.com/share/1CkGtyxdJk/" aria-label="Facebook" target="_blank" rel="noopener">
+                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="" />
+                  </a>
+                  <a href="https://www.instagram.com/awaisagency8tm?igsh=MWZoenR5cW5jcHltNQ==" aria-label="Instagram" target="_blank" rel="noopener">
+                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="" />
+                  </a>
+                  <a href="https://whatsapp.com/channel/0029VbB6UPKKAwEddDb36t1N" aria-label="WhatsApp" target="_blank" rel="noopener">
+                      <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" />
+                  </a>
+              </div>
+          </div>
+      </div>
+      <div class="legal">© <span id="year"></span> Awais Agency8™. All rights reserved.</div>
+  </footer>
 </body>
 </html>
+
+
 
 
