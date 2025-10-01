@@ -1,4 +1,4 @@
-LP<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -167,28 +167,35 @@ LP<!DOCTYPE html>
                 { id: 8, title: 'Dubai Chocolate Bar', price: '$39.90', rating: '4.6', image: 'productsimages/coclatebar.png' }
             ];
     
-            var card = function (p) {
-                return (
-                    '<article class="product-card is-visible">' +
-                        '<div class="product-media">' +
-                            '<img src="' + p.image + '" alt="' + p.title + '" />' +
-                            '<span class="product-badge">Hot</span>' +
-                        '</div>' +
-                        '<div class="product-body">' +
-                            '<h4 class="product-title">' + p.title + '</h4>' +
-                            '<div class="product-meta">' +
-                                '<span class="price">' + p.price + '</span>' +
-                                '<span class="rating"><span class="stars">★</span> ' + p.rating + '</span>' +
-                            '</div>' +
-                            '<div class="product-actions">' +
-                                '<a href="view.html?title=' + encodeURIComponent(p.title) + '&price=' + encodeURIComponent(p.price) + '" class="btn btn-primary">Buy</a>' +
-                                '<a href="view.html?title=' + encodeURIComponent(p.title) + '&price=' + encodeURIComponent(p.price) + '" class="btn">View</a>' +
-                            '</div>' +
-                        '</div>' +
-                    '</article>'
-                );
-            };
     
+
+
+var card = function (p) {
+    return (
+        '<article class="product-card is-visible">' +
+            '<div class="product-media">' +
+                '<img src="' + p.image + '" alt="' + p.title + '" />' +
+                '<span class="product-badge">Hot</span>' +
+            '</div>' +
+            '<div class="product-body">' +
+                '<h4 class="product-title">' + p.title + '</h4>' +
+                '<div class="product-meta">' +
+                    '<span class="price">' + p.price + '</span>' +
+                    '<span class="rating"><span class="stars">★</span> ' + p.rating + '</span>' +
+                '</div>' +
+                '<div class="product-actions">' +
+                    '<a href="view.html?id=' + p.id + '" class="btn btn-primary">Buy</a>' +
+                    '<a href="view.html?id=' + p.id + '" class="btn">View</a>' +
+                '</div>' +
+            '</div>'+
+        '</article>'
+    );
+};
+
+
+
+
+
             grid.innerHTML = products.map(card).join('');
         });
         </script>
