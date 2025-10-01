@@ -21,7 +21,7 @@
             <div class="logo" aria-hidden="true">
                 <img src="logo.png" alt="Awais Agency8 logo" style="height:50px;width:50px;border-radius:50%;object-fit:cover;display:block;" />
             </div>
-            <a class="brand-title" href="#">Awais Agency8<sup>™</sup></a>
+            <a class="brand-title" href="#">Awais Agency8<sup>™</sup>🎁</a>
         </div>
 
         
@@ -92,39 +92,39 @@
                 <p>Acni</p>
             </a>
             <a class="category-card" href="view.html?category=Laptops">
-                <img src="productsimages/charger.png" alt="Charger" />
+                <img src="productsimages/charger.png" alt="Laptops" />
                 <p>Watch Charger Cable (2 Pack)</p>
             </a>
             <a class="category-card" href="view.html?category=Audio">
-                <img src="imges/android14.png" alt="android14" />
-                <p>Android 14</p>
+                <img src="productsimages/bittool.png" alt="Audio" />
+                <p>Audio</p>
             </a>
-            <a class="category-card" href="view.html?category=Toy">
-                <img src="imges/toystarprojector.png" alt="Toy" />
-                <p>Star Projector</p>
+            <a class="category-card" href="view.html?category=Home">
+                <img src="https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=300&q=70&auto=format&fit=crop" alt="Home" />
+                <p>Home</p>
             </a>
             <a class="category-card" href="view.html?category=Beauty">
-                <img src="imges/android15.png" alt="Android" />
-                <p>Android 15 Tablet</p>
+                <img src="https://images.unsplash.com/photo-1512203492609-8a4e66a2df54?w=300&q=70&auto=format&fit=crop" alt="Beauty" />
+                <p>Beauty</p>
             </a>
             <a class="category-card" href="view.html?category=Toys">
-                <img src="productsimages/bittool.png" alt="Toys" />
-                <p>25-Piece Torx Bit Set</p>
+                <img src="https://images.unsplash.com/photo-1545486332-9e0999c535b7?w=300&q=70&auto=format&fit=crop" alt="Toys" />
+                <p>Toys</p>
             </a>
             <a class="category-card" href="view.html?category=Fashion">
-                <img src="productsimages/cleaner.png" alt="TOOGE" />
-                <p>TOOGE Pooper Scooper</p>
+                <img src="https://images.unsplash.com/photo-1520975922203-b8ae6ff66ce3?w=300&q=70&auto=format&fit=crop" alt="Fashion" />
+                <p>Fashion</p>
             </a>
             <a class="category-card" href="view.html?category=Automotive">
-                <img src="productsimages/coclatebar.png" alt="Automotive" />
-                <p>Dubai Chocolate Bar</p>
+                <img src="https://images.unsplash.com/photo-1517677208171-0bc6725a3e60?w=300&q=70&auto=format&fit=crop" alt="Automotive" />
+                <p>Automotive</p>
             </a>
             <a class="category-card" href="view.html?category=Tools">
-                <img src="productsimages/coclatebar.png" alt="Tools" />
-                <p>Dubai Chocolate Bar</p>
+                <img src="https://images.unsplash.com/photo-1501183638710-841dd1904471?w=300&q=70&auto=format&fit=crop" alt="Tools" />
+                <p>Tools</p>
             </a>
             <a class="category-card" href="view.html?category=Wearables">
-                <img src="imges/android15.png" alt="Wearables" />
+                <img src="https://images.unsplash.com/photo-1516570161787-2fd917215a3d?w=300&q=70&auto=format&fit=crop" alt="Wearables" />
                 <p>Wearables</p>
             </a>
         </div>
@@ -155,48 +155,67 @@
             var grid = document.getElementById('productGrid');
             if (!grid) return;
     
-            // Fallback products (since external script.js is missing)
-            var products = [
-                { id: 1, title: 'Acni Patch', price: '$52.99', rating: '4.6', image: 'productsimages/acni2.png'   },
-                { id: 2, title: 'Watch charger ', price: '$9.00', rating: '4.5', image: 'productsimages/charger.png' },
-                { id: 3, title: 'Android 14', price: '$56.99', rating: '4.4', image: 'imges/android14.png' },
-                { id: 4, title: 'Star Projector', price: '$15.99', rating: '4.7', image:  'imges/toystarprojector.png'},
-                { id: 5, title: 'Android 15 Tablet', price: '$92.00', rating: '4.3', image: 'imges/android15.png'},
-                { id: 6, title: '25-Piece Torx Bit Set', price: '$46.00', rating: '4.5', image:  'productsimages/bittool.png'},
-                { id: 7, title: 'TOOGE Pooper Scooper', price: '$32.00', rating: '4.2', image: 'productsimages/cleaner.png' },
-                { id: 8, title: 'Dubai Chocolate Bar', price: '$39.90', rating: '4.6', image: 'productsimages/coclatebar.png' }
+            // Product card renderer
+            function card(p) {
+                return (
+                    '<article class="product-card is-visible">' +
+                        '<div class="product-media">' +
+                            '<img src="' + p.image + '" alt="' + p.title + '" />' +
+                            '<span class="product-badge">Hot</span>' +
+                        '</div>' +
+                        '<div class="product-body">' +
+                            '<h4 class="product-title">' + p.title + '</h4>' +
+                            '<div class="product-meta">' +
+                                '<span class="price">' + p.price + '</span>' +
+                                '<span class="rating"><span class="stars">★</span> ' + p.rating + '</span>' +
+                            '</div>' +
+                            '<div class="product-actions">' +
+                                '<a href="view.html?id=' + encodeURIComponent(p.id) + '" class="btn btn-primary">Buy</a>' +
+                                '<a href="view.html?id=' + encodeURIComponent(p.id) + '" class="btn">View</a>' +
+                            '</div>' +
+                        '</div>' +
+                    '</article>'
+                );
+            }
+
+            // Load first 8 products from products.json
+            function renderProducts(items){
+              var products = (items || []).slice(0,8).map(function(p){
+                return {
+                  id: p.id,
+                  title: p.title,
+                  price: '$' + (p.price != null ? p.price.toFixed(2) : ''),
+                  rating: (p.rating != null ? p.rating.toFixed(1) : ''),
+                  image: (p.images && p.images[0]) ? p.images[0] : (p.img || '')
+                };
+              });
+              grid.innerHTML = products.map(card).join('');
+            }
+
+            function fetchJSON(url){ return fetch(url).then(function(r){ return r.json(); }); }
+            var fallbackItems = [
+              { id: 1, title: 'Acni Patch', price: 50.99, rating: 4.6, images: ['productsimages/acni2.png'] },
+              { id: 2, title: 'Watch Charger Cable (2 Pack)', price: 7.00, rating: 4.5, images: ['productsimages/charger.png'] },
+              { id: 3, title: 'Bit Tool Kit', price: 14.50, rating: 4.4, images: ['productsimages/bittool.png'] },
+              { id: 4, title: 'Multi-Surface Cleaner', price: 9.99, rating: 4.3, images: ['productsimages/cleaner.png'] },
+              { id: 5, title: 'Chocolate Bar Set', price: 4.99, rating: 4.2, images: ['productsimages/coclatebar.png'] },
+              { id: 6, title: 'Child Protector', price: 5.49, rating: 4.1, images: ['productsimages/childprodector.png'] },
+              { id: 7, title: 'Powerful Quad Processor', price: 119.00, rating: 4.5, images: ['productsimages/powerfulqourprocessor.png'] },
+              { id: 8, title: 'Star Projector Toy', price: 24.99, rating: 4.6, images: ['imges/toystarprojector.png'] }
             ];
+
+            if (location.protocol === 'file:') {
+              renderProducts(fallbackItems);
+            } else {
+              fetchJSON('products.json').then(function(items){
+                if (items && items.length) { renderProducts(items); }
+                else { renderProducts(fallbackItems); }
+              }).catch(function(){ renderProducts(fallbackItems); });
+            }
     
+            
     
-
-
-var card = function (p) {
-    return (
-        '<article class="product-card is-visible">' +
-            '<div class="product-media">' +
-                '<img src="' + p.image + '" alt="' + p.title + '" />' +
-                '<span class="product-badge">Hot</span>' +
-            '</div>' +
-            '<div class="product-body">' +
-                '<h4 class="product-title">' + p.title + '</h4>' +
-                '<div class="product-meta">' +
-                    '<span class="price">' + p.price + '</span>' +
-                    '<span class="rating"><span class="stars">★</span> ' + p.rating + '</span>' +
-                '</div>' +
-                '<div class="product-actions">' +
-                    '<a href="view.html?id=' + p.id + '" class="btn btn-primary">Buy</a>' +
-                    '<a href="view.html?id=' + p.id + '" class="btn">View</a>' +
-                '</div>' +
-            '</div>'+
-        '</article>'
-    );
-};
-
-
-
-
-
-            grid.innerHTML = products.map(card).join('');
+            // grid will be filled after fetching or via fallback
         });
         </script>
 
