@@ -2,9 +2,9 @@
   {
     "id": 1,
     "title": "Acni Patch",
-  
     "price": 50.99,
     "rating": 4.6,
+    "description": "Skin-friendly hydrocolloid patches to reduce blemishes quickly.",
     "images": [
       "productsimages/acni2.png",
       "productsimages/acni3.png",
@@ -19,6 +19,7 @@
     "title": "Watch Charger Cable (2 Pack)",
     "price": 7.0,
     "rating": 4.5,
+    "description": "Durable replacement charging cables compatible with popular smartwatches.",
     "images": [
       "productsimages/charger.png",
       "productsimages/charger2.png",
@@ -33,6 +34,7 @@
     "title": "Bit Tool Kit",
     "price": 14.5,
     "rating": 4.4,
+    "description": "Precision screwdriver set ideal for electronics and household fixes.",
     "images": [
       "productsimages/bittool.png",
       "productsimages/bittool2.png"
@@ -43,6 +45,7 @@
     "title": "Multi-Surface Cleaner",
     "price": 9.99,
     "rating": 4.3,
+    "description": "Powerful, streak-free formula for kitchens, bathrooms, and more.",
     "images": [
       "productsimages/cleaner.png",
       "productsimages/cleaner2.png",
@@ -57,6 +60,7 @@
     "title": "Chocolate Bar Set",
     "price": 4.99,
     "rating": 4.2,
+    "description": "Assorted chocolate bars with rich, smooth flavors for every taste.",
     "images": [
       "productsimages/coclatebar.png",
       "productsimages/choclate2.png",
@@ -68,6 +72,7 @@
     "title": "Child Protector",
     "price": 5.49,
     "rating": 4.1,
+    "description": "Safety guards to childproof sharp corners and edges at home.",
     "images": [
       "productsimages/childprodector.png"
     ]
@@ -77,6 +82,7 @@
     "title": "Powerful Quad Processor",
     "price": 119.0,
     "rating": 4.5,
+    "description": "High-performance processor for smooth multitasking and gaming.",
     "images": [
       "productsimages/powerfulqourprocessor.png"
     ]
@@ -86,6 +92,7 @@
     "title": "Star Projector Toy",
     "price": 24.99,
     "rating": 4.6,
+    "description": "Projector toy that creates a soothing starry night ambiance.",
     "images": [
       "imges/toystarprojector.png",
       "imges/toy2.png",
