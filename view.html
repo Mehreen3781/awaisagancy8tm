@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product View</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    .container { max-width: 800px; margin: auto; }
-    .slider img { width: 100%; border-radius: 10px; }
-    .thumbs { display: flex; gap: 10px; margin-top: 10px; }
-    .thumbs img { width: 80px; height: 80px; object-fit: cover; cursor: pointer; border-radius: 6px; border: 1px solid #ccc; }
-    .title { font-size: 24px; font-weight: bold; margin: 15px 0 5px; }
+    body { font-family: Arial, sans-serif; margin: 20px; background:#f9f9f9; }
+    .container { max-width: 800px; margin: auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1); }
+    .main-img { width: 100%; max-height: 400px; object-fit: contain; border-radius: 10px; border:1px solid #ddd; }
+    .thumbs { display: flex; gap: 10px; margin-top: 10px; justify-content:center; }
+    .thumbs img { width: 100px; height: 100px; object-fit: cover; cursor: pointer; border-radius: 6px; border:2px solid transparent; }
+    .thumbs img:hover { border:2px solid #0a66c2; }
+    .title { font-size: 24px; font-weight: bold; margin: 20px 0 5px; }
     .price { font-size: 20px; color: green; margin-bottom: 10px; }
-    .desc { font-size: 16px; color: #555; }
+    .desc { font-size: 16px; color: #555; line-height:1.4; }
     .btn { display: inline-block; margin-top: 15px; padding: 10px 15px; background: #0a66c2; color: #fff; text-decoration: none; border-radius: 5px; }
     .btn:hover { background: #084d94; }
   </style>
@@ -21,23 +22,25 @@
   <div class="container">
     <a href="index.html" style="text-decoration:none;">← Back to Home</a>
 
-    <!-- Product Main Image -->
-    <div class="slider">
-      <img id="mainImage" src="productsimages/product1.png" alt="Main product image">
-    </div>
+    <!-- Main Image -->
+    <img id="mainImage" src="productsimages/product1.png" alt="Main product" class="main-img">
 
     <!-- Thumbnails -->
     <div class="thumbs">
-      <img src="productsimages/acni2.png" onclick="changeImage(this)">
-      <img src="productsimages/acni3.png" onclick="changeImage(this)">
-      <img src="productsimages/acni4.png" onclick="changeImage(this)">
+      <img src="productsimages/product1.png" onclick="changeImage(this)">
+      <img src="productsimages/product2.png" onclick="changeImage(this)">
+      <img src="productsimages/product3.png" onclick="changeImage(this)">
+      <img src="productsimages/product4.png" onclick="changeImage(this)">
     </div>
 
     <!-- Product Info -->
     <div class="title">Sample Product Title</div>
     <div class="price">Rs. 1,200</div>
     <div class="desc">
-      This is a simple description of the product. You can write features, quality, and details here.
+      ✅ High-quality product <br>
+      ✅ Fast shipping available <br>
+      ✅ Best for reselling & wholesale <br>
+      ✅ 7 days easy return policy
     </div>
 
     <!-- WhatsApp Button -->
