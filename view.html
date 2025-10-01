@@ -1,56 +1,99 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product View</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; background:#f9f9f9; }
-    .container { max-width: 800px; margin: auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1); }
-    .main-img { width: 100%; max-height: 400px; object-fit: contain; border-radius: 10px; border:1px solid #ddd; }
-    .thumbs { display: flex; gap: 10px; margin-top: 10px; justify-content:center; }
-    .thumbs img { width: 100px; height: 100px; object-fit: cover; cursor: pointer; border-radius: 6px; border:2px solid transparent; }
-    .thumbs img:hover { border:2px solid #0a66c2; }
-    .title { font-size: 24px; font-weight: bold; margin: 20px 0 5px; }
-    .price { font-size: 20px; color: green; margin-bottom: 10px; }
-    .desc { font-size: 16px; color: #555; line-height:1.4; }
-    .btn { display: inline-block; margin-top: 15px; padding: 10px 15px; background: #0a66c2; color: #fff; text-decoration: none; border-radius: 5px; }
-    .btn:hover { background: #084d94; }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <a href="index.html" style="text-decoration:none;">← Back to Home</a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Product View | Awais Agency8™</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .view { max-width: 1200px; margin: 20px auto; padding: 0 16px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+      .view-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .media { width: 100%; }
+      .media .slider { width: 100%; max-width: 100%; aspect-ratio: 16/10; background: #f5f5f6; border: 1px solid #e5e6e8; border-radius: 12px; overflow: hidden; position: relative; }
+      .slides { position: relative; width: 100%; height: 100%; }
+      .slide { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 400ms ease; display: grid; place-items: center; background: #fff; }
+      .slide.is-active { opacity: 1; }
+      .slide img, .slide video { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .thumbs { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; }
+      .thumbs img, .thumbs video { width: 100px; height: 70px; object-fit: cover; border: 1px solid #e5e6e8; border-radius: 8px; cursor: pointer; }
+      .content { display: grid; gap: 12px; }
+      .price { font-size: 20px; font-weight: 700; }
+      .cta-row { display: flex; gap: 10px; align-items: center; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px; border-radius: 10px; border: 1px solid #e5e6e8; background: transparent; color: #0f0f10; text-decoration: none; cursor: pointer; transition: transform 180ms ease, box-shadow 180ms ease, color 150ms ease, border-color 150ms ease; }
+      .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: #0a66c2; border-color: #0a66c2; }
+      @media (max-width: 800px) {
+        .view-grid { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="view">
+      <a href="index.html" class="btn">← Back to Home</a>
+      <div class="view-grid">
+        <div class="media">
+          <div class="slider" id="viewSlider">
 
-    <!-- Main Image -->
-    <img id="mainImage" src="productsimages/acni2.png" alt="Main product" class="main-img">
 
-    <!-- Thumbnails -->
-    <div class="thumbs">
-      <img src="productsimages/product1.png" onclick="changeImage(this)">
-      <img src="productsimages/product2.png" onclick="changeImage(this)">
-      <img src="productsimages/product3.png" onclick="changeImage(this)">
-      <img src="productsimages/product4.png" onclick="changeImage(this)">
+
+            <!--------------Update the images and videos here-------------------------------------->
+            <div class="slides">
+              <div class="slide is-active"><img src="productsimages/acni2.png" alt="Product image 1"></div>
+              <div class="slide"><img src="productsimages/acni3.png" alt="Product image 2"></div>
+              <div class="slide"><img src="productsimages/acni4.png" alt="Product image 3"></div>
+              <div class="slide"><img src="productsimages/acni6.png" alt="Product image 4"></div>
+              <div class="slide"><video src="productsimages/acni5.png" autoplay muted loop playsinline></video></div>
+            </div>
+          </div>
+          <div class="thumbs" id="viewThumbs">
+            <img data-index="0" src="productsimages/acnispanch.png" alt="thumb 1">
+            <img data-index="1" src="productsimages/charger.png" alt="thumb 2">
+            <img data-index="2" src="imges/android14-4.png" alt="thumb 3">
+            <img data-index="3" src="imges/toystarprojector.png" alt="thumb 4">
+            <video data-index="4" src="https://videos.pexels.com/video-files/6963046/6963046-uhd_732_1440_24fps.mp4"></video>
+          </div>
+        </div>
+        <div class="content">
+          <h1 id="pTitle">Product Title</h1>
+          <div class="price" id="pPrice">$29.99</div>
+          <p id="pDesc">High-quality product ideal for dropshipping and wholesale. Durable design with great value for money. Shipped globally with fast fulfillment options.</p>
+          <div class="cta-row">
+            <a id="waBtn" class="btn btn-primary" href="https://wa.me/923077169743?text=I%20want%20to%20add%20this%20product%20to%20cart" target="_blank" rel="noopener">Add to Cart via WhatsApp</a>
+            <a class="btn" href="index.html">Continue Shopping</a>
+          </div>
+
+          <!-------------------------------------updation endend here -->
+        </div>
+      </div>
     </div>
+    <script>
+      (function(){
+        var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+        var thumbs = Array.prototype.slice.call(document.querySelectorAll('#viewThumbs [data-index]'));
+        var active = 0;
+        function go(i){
+          slides.forEach(function(s, k){ s.classList.toggle('is-active', k === i); });
+          active = i;
+        }
+        thumbs.forEach(function(t){ t.addEventListener('click', function(){ go(parseInt(t.getAttribute('data-index'), 10)); }); });
 
-    <!-- Product Info -->
-    <div class="title">Sample Product Title</div>
-    <div class="price">Rs. 1,200</div>
-    <div class="desc">
-      ✅ High-quality product <br>
-      ✅ Fast shipping available <br>
-      ✅ Best for reselling & wholesale <br>
-      ✅ 7 days easy return policy
-    </div>
-
-    <!-- WhatsApp Button -->
-    <a class="btn" href="https://wa.me/923077169743?text=I%20want%20to%20buy%20this%20product" target="_blank">Order on WhatsApp</a>
-  </div>
-
-  <script>
-    function changeImage(smallImg) {
-      document.getElementById("mainImage").src = smallImg.src;
-    }
-  </script>
-</body>
+        // Optionally populate content from query params (?title=&price=)
+        var params = new URLSearchParams(location.search);
+        var title = params.get('title');
+        var price = params.get('price');
+        if (title) document.getElementById('pTitle').textContent = title;
+        if (price) document.getElementById('pPrice').textContent = price;
+        var wa = document.getElementById('waBtn');
+        if (title) wa.href = 'https://wa.me/923077169743?text=' + encodeURIComponent('Add to cart: ' + title + ' (' + (price||'') + ')');
+      })();
+    </script>
+  </body>
 </html>
+
+
