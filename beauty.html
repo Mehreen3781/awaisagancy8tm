@@ -1,161 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beauty | Awais Agency8™</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Beauty | Awais Agency8™</title>
+    <meta name="description" content="Discover beauty and skincare products at Awais Agency8™ — perfect for dropshipping and wholesale." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand" aria-label="Awais Agency8 brand">
-      <div class="logo" aria-hidden="true">
-        <img src="logo.png" alt="Awais Agency8 logo" style="height:50px;width:50px;border-radius:50%;object-fit:cover;display:block;" />
-      </div>
-      <a class="brand-title" href="index.html">Awais Agency8<sup>™</sup></a>
-    </div>
-    <nav class="quick-actions" aria-label="Account actions">
-      <a href="signin.html" class="action">Sign In</a>
-      <a href="orders.html" class="action">Orders</a>
-      <a href="cart.html" class="action cart" aria-label="Cart">
-        <span class="icon">🛒</span>
-        <span class="badge" aria-label="Items in cart">2</span>
-      </a>
-    </nav>
-  </header>
+    <!-- Top Announcement Bar -->
+    <div class="announcement" role="status">Worldwide shipping • Wholesale pricing • Trusted by international sellers</div>
 
-  <nav class="subnav" aria-label="Primary navigation">
-    <a class="nav-pill" href="all.html">All</a>
-    <a class="nav-pill" href="electronics.html">Electronics</a>
-    <a class="nav-pill" href="index.html">Home</a>
-    <a class="nav-pill active" href="beauty.html">Beauty</a>
-    <a class="nav-pill" href="toys.html">Toys</a>
-    <a class="nav-pill" href="fashion.html">Fashion</a>
-    <a class="nav-pill" href="automotive.html">Automotive</a>
-    <a class="nav-pill" href="about.html">About</a>
-  </nav>
-
-  <main class="products" aria-label="Beauty listings">
-    <header class="section-header">
-      <h3>Beauty</h3>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="brand" aria-label="Awais Agency8 brand">
+            <div class="logo" aria-hidden="true">
+                <img src="logo.png" alt="Awais Agency8 logo" style="height:50px;width:50px;border-radius:50%;object-fit:cover;display:block;" />
+            </div>
+            <a class="brand-title" href="index.html">Awais Agency8<sup>™</sup>🎁</a>
+        </div>
+        <nav class="quick-actions" aria-label="Account actions">
+            <a href="signin.html" class="action">Sign In</a>
+            <a href="orders.html" class="action">Orders</a>
+            <a href="cart.html" class="action cart" aria-label="Cart">
+                <span class="icon">🛒</span>
+                <span class="badge" aria-label="Items in cart">2</span>
+            </a>
+        </nav>
     </header>
-    <div class="product-grid">
-      <article class="product-card is-visible">
-        <div class="product-media">
-          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&q=80&auto=format&fit=crop" alt="Skincare Set" onerror="this.src='https://via.placeholder.com/800x600?text=Image+not+available'" />
-          <span class="product-badge">New</span>
-        </div>
-        <div class="product-body">
-          <h4 class="product-title">Skincare Set</h4>
-          <div class="product-meta">
-            <span class="price">$35.00</span>
-            <span class="rating"><span class="stars">★</span> 4.4</span>
-          </div>
-          <div class="product-actions">
-            <a href="view.html?title=Skincare%20Set&price=$35.00" class="btn btn-primary">Buy</a>
-            <a href="view.html?title=Skincare%20Set&price=$35.00" class="btn">View</a>
-            <a href="cart.html?title=Skincare%20Set&price=$35.00" class="btn">Cart</a>
-          </div>
-        </div>
-      </article>
-      <article class="product-card is-visible">
-        <div class="product-media">
-          <img src="https://images.unsplash.com/photo-1505575967455-40e256f73376?w=800&q=80&auto=format&fit=crop" alt="Makeup Palette" onerror="this.src='https://via.placeholder.com/800x600?text=Image+not+available'" />
-          <span class="product-badge">Hot</span>
-        </div>
-        <div class="product-body">
-          <h4 class="product-title">Makeup Palette</h4>
-          <div class="product-meta">
-            <span class="price">$27.99</span>
-            <span class="rating"><span class="stars">★</span> 4.5</span>
-          </div>
-          <div class="product-actions">
-            <a href="view.html?title=Makeup%20Palette&price=$27.99" class="btn btn-primary">Buy</a>
-            <a href="view.html?title=Makeup%20Palette&price=$27.99" class="btn">View</a>
-            <a href="cart.html?title=Makeup%20Palette&price=$27.99" class="btn">Cart</a>
-          </div>
-        </div>
-      </article>
-      <article class="product-card is-visible">
-        <div class="product-media">
-          <img src="https://images.unsplash.com/photo-1589985270826-4a7b3a5d74f3?w=800&q=80&auto=format&fit=crop" alt="Hair Dryer" onerror="this.src='https://via.placeholder.com/800x600?text=Image+not+available'" />
-          <span class="product-badge">Deal</span>
-        </div>
-        <div class="product-body">
-          <h4 class="product-title">Hair Dryer</h4>
-          <div class="product-meta">
-            <span class="price">$19.99</span>
-            <span class="rating"><span class="stars">★</span> 4.2</span>
-          </div>
-          <div class="product-actions">
-            <a href="view.html?title=Hair%20Dryer&price=$19.99" class="btn btn-primary">Buy</a>
-            <a href="view.html?title=Hair%20Dryer&price=$19.99" class="btn">View</a>
-            <a href="cart.html?title=Hair%20Dryer&price=$19.99" class="btn">Cart</a>
-          </div>
-        </div>
-      </article>
-      <article class="product-card is-visible">
-        <div class="product-media">
-          <img src="https://images.unsplash.com/photo-1522335789203-9d42a6f2a3da?w=800&q=80&auto=format&fit=crop" alt="Serum" onerror="this.src='https://via.placeholder.com/800x600?text=Image+not+available'" />
-          <span class="product-badge">Top</span>
-        </div>
-        <div class="product-body">
-          <h4 class="product-title">Vitamin C Serum</h4>
-          <div class="product-meta">
-            <span class="price">$14.50</span>
-            <span class="rating"><span class="stars">★</span> 4.3</span>
-          </div>
-          <div class="product-actions">
-            <a href="view.html?title=Vitamin%20C%20Serum&price=$14.50" class="btn btn-primary">Buy</a>
-            <a href="view.html?title=Vitamin%20C%20Serum&price=$14.50" class="btn">View</a>
-            <a href="cart.html?title=Vitamin%20C%20Serum&price=$14.50" class="btn">Cart</a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </main>
 
-  <footer class="site-footer">
-    <div class="cols">
-      <div class="col">
-        <h4>Awais Agency8<sup>™</sup></h4>
-        <p>Your global wholesale and dropshipping partner.</p>
-      </div>
-      <div class="col">
-        <h5>Explore</h5>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="wholesale.html">Wholesale</a></li>
-          <li><a href="dropshipping.html">Dropshipping</a></li>
-          <li><a href="logistics.html">Logistics</a></li>
-        </ul>
-      </div>
-      <div class="col">
-        <h5>Support</h5>
-        <ul>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Shipping</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="col">
-        <h5>Follow</h5>
-        <div class="socials">
-          <a href="https://www.tiktok.com/@awais.agency8?_t=ZS-8zzYo8y1PIQ&_r=1" aria-label="TikTok" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="" /></a>
-          <a href="https://www.facebook.com/share/1CkGtyxdJk/" aria-label="Facebook" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="" /></a>
-          <a href="https://www.instagram.com/awaisagency8tm?igsh=MWZoenR5cW5jcHltNQ==" aria-label="Instagram" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="" /></a>
-          <a href="https://whatsapp.com/channel/0029VbB6UPKKAwEddDb36t1N" aria-label="WhatsApp" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" /></a>
+    <!-- Sub Navigation -->
+    <nav class="subnav" aria-label="Primary navigation">
+        <a class="nav-pill" href="all.html">All</a>
+        <a class="nav-pill" href="electronics.html">Electronics</a>
+        <a class="nav-pill" href="home.html">Home</a>
+        <a class="nav-pill active" href="beauty.html">Beauty</a>
+        <a class="nav-pill" href="toys.html">Toys</a>
+        <a class="nav-pill" href="fashion.html">Fashion</a>
+        <a class="nav-pill" href="automotive.html">Automotive</a>
+        <a class="nav-pill" href="about.html">About</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="section-hero">
+        <div>
+            <h1>Beauty & Skincare</h1>
+            <p>Premium beauty products for healthy, glowing skin</p>
         </div>
-      </div>
-    </div>
-    <div class="legal">© <span id="year"></span> Awais Agency8™. All rights reserved.</div>
-  </footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+        <img src="productsimages/acni2.png" alt="Beauty Collection" class="promo-image" />
+    </section>
+
+    <!-- Products -->
+    <main id="products" class="products" aria-label="Beauty products">
+        <header class="section-header">
+            <h3>Beauty & Skincare</h3>
+            <div class="filters">
+                <select aria-label="Sort products">
+                    <option>Featured</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Best Rated</option>
+                    <option>Newest</option>
+                </select>
+            </div>
+        </header>
+        <div class="product-grid" id="productGrid" data-animate="grid"></div>
+    </main>
+
+    <!-- CTA -->
+    <section id="cta" class="cta">
+        <div class="cta-inner">
+            <h3>Start selling with Awais Agency8<sup>™</sup></h3>
+            <p>One partner for sourcing, fulfillment, and growth. Scale internationally with confidence.</p>
+            <a href="#" class="btn btn-primary">Become a partner</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="cols">
+            <div class="col">
+                <h4>Awais Agency8<sup>™</sup></h4>
+                <p>Your global wholesale and dropshipping partner.</p>
+            </div>
+            <div class="col">
+                <h5>Explore</h5>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Wholesale</a></li>
+                    <li><a href="#">Dropshipping</a></li>
+                    <li><a href="#">Logistics</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h5>Support</h5>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h5>Follow</h5>
+                <div class="socials">
+                    <a href="https://www.tiktok.com/@awais.agency8?_t=ZS-8zzYo8y1PIQ&_r=1" aria-label="TikTok" target="_blank" rel="noopener">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" alt="" />
+                    </a>
+                    <a href="https://www.facebook.com/share/1CkGtyxdJk/" aria-label="Facebook" target="_blank" rel="noopener">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="" />
+                    </a>
+                    <a href="https://www.instagram.com/awaisagency8tm?igsh=MWZoenR5cW5jcHltNQ==" aria-label="Instagram" target="_blank" rel="noopener">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="" />
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029VbB6UPKKAwEddDb36t1N" aria-label="WhatsApp" target="_blank" rel="noopener">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="legal">© <span id="year"></span> Awais Agency8™. All rights reserved.</div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var grid = document.getElementById('productGrid');
+            if (!grid) return;
+
+            // Product card renderer
+            function card(p) {
+                return (
+                    '<article class="product-card is-visible">' +
+                        '<div class="product-media">' +
+                            '<img src="' + p.image + '" alt="' + p.title + '" />' +
+                            '<span class="product-badge">Hot</span>' +
+                        '</div>' +
+                        '<div class="product-body">' +
+                            '<h4 class="product-title">' + p.title + '</h4>' +
+                            '<div class="product-meta">' +
+                                '<span class="price">' + p.price + '</span>' +
+                                '<span class="rating"><span class="stars">★</span> ' + p.rating + '</span>' +
+                            '</div>' +
+                            '<div class="product-actions">' +
+                                '<a href="view.html?id=' + encodeURIComponent(p.id) + '" class="btn btn-primary">Buy</a>' +
+                                '<a href="view.html?id=' + encodeURIComponent(p.id) + '" class="btn">View</a>' +
+                            '</div>' +
+                        '</div>' +
+                    '</article>'
+                );
+            }
+
+            // Load beauty products from products.json
+            function renderProducts(items){
+              var products = (items || []).filter(function(p){ return p.category === 'beauty'; }).map(function(p){
+                return {
+                  id: p.id,
+                  title: p.title,
+                  price: '$' + (p.price != null ? p.price.toFixed(2) : ''),
+                  rating: (p.rating != null ? p.rating.toFixed(1) : ''),
+                  image: (p.images && p.images[0]) ? p.images[0] : (p.img || '')
+                };
+              });
+              grid.innerHTML = products.map(card).join('');
+            }
+
+            function fetchJSON(url){ return fetch(url).then(function(r){ return r.json(); }); }
+            var fallbackItems = [
+              { id: 1, title: 'Acni Patch', price: 50.99, rating: 4.6, category: 'beauty', images: ['productsimages/acni2.png'] }
+            ];
+
+            if (location.protocol === 'file:') {
+              renderProducts(fallbackItems);
+            } else {
+              fetchJSON('products.json').then(function(items){
+                if (items && items.length) { renderProducts(items); }
+                else { renderProducts(fallbackItems); }
+              }).catch(function(){ renderProducts(fallbackItems); });
+            }
+        });
+    </script>
 </body>
 </html>
-
-
